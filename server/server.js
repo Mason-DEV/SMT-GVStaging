@@ -5,7 +5,6 @@
 var app = require('./app');
 var debug = require('debug')('express-react:server');
 var http = require('http');
-
 /**
  * Get port from environment and store in Express.
  */
