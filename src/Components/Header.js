@@ -3,6 +3,7 @@ import navLogo from "../Images/SMT_logo.png";
 import "../App.css";
 import axios from "axios";
 import {
+	
 	Button,
 	Collapse,
 	Input,
@@ -102,7 +103,7 @@ class Header extends Component {
         console.log("HeaderState",this.state)
 		return (
 			<div style={{backgroundColor: "#62AA58", paddingBottom: "4px"}}>
-				<Navbar color="dark" light expand="lg">
+				<Navbar color="dark" light expand="lg" style={{height: "55px"}}>
 					<NavbarBrand>
 						<img src={navLogo}></img>
 					</NavbarBrand>

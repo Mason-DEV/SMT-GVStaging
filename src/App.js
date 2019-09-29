@@ -83,7 +83,7 @@ class App extends Component {
 	render() {
 		console.log(this.state);
 		return (
-			<div style={{backgroundColor: "#3d444b"}}>
+			<div style={{background: "#343A40"}}>
 			<React.Fragment >
 				<Header/>
 					<Container fluid>
