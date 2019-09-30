@@ -97,7 +97,7 @@ class Header extends Component {
 	}
 
 	render() {
-        console.log("HeaderState",this.state)
+        // console.log("HeaderState",this.state)
 		return (
 			<div style={{backgroundColor: "#62AA58", paddingBottom: "4px"}}>
 				<Navbar color="dark" light expand="lg" style={{height: "55px"}}>

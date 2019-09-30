@@ -231,7 +231,7 @@ class Home extends Component {
 	inningChange(e, Props) {
 		const inning  = Props.children;
 		var suffix = '';
-		console.info(inning)
+		//console.info(inning)
 		if(inning === 1)
 			suffix = 'st'
 		else if(inning === 2)

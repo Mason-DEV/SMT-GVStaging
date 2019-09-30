@@ -60,7 +60,7 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state);
+		// console.log(this.state);
 		return (
 			<div style={{background: "#343A40"}}>
 			<React.Fragment >
