@@ -29,7 +29,7 @@
     "build": "react-scripts build && mv build server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start": "react-scripts start"
+    "start": "concurrently \"react-scripts start\" \"node server/server.js\""
   },
   "proxy": "http://localhost:5000"
 }
