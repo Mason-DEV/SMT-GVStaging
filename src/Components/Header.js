@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import navLogo from "../Images/SMT_logo.png";
 import "../App.css";
-import axios from "axios";
 import {
 	
 	Button,
@@ -9,13 +8,11 @@ import {
 	Input,
 	InputGroup,
 	InputGroupAddon,
-	InputGroupText,
 	Navbar,
 	NavbarToggler,
 	NavbarBrand,
 	Nav,
-	NavItem,
-	NavLink,
+
     UncontrolledDropdown,
     DropdownToggle,
     DropdownItem,

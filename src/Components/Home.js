@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "../App.css";
-import axios from "axios";
+//import axios from "axios";
 import {
-	Divider,
+
 	Card,
 	Image,
 	Button,
@@ -10,26 +10,19 @@ import {
 	Header,
 	List,
 	Icon,
-	Table,
-	Label,
-	Container,
+
 	Accordion,
-	Form,
-	Menu,
+
 	Tab,
 	Grid,
-	Segment,
-	Statistic
+
 } from "semantic-ui-react";
-import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 import {
 	Player,
 	ControlBar,
 	PlaybackRateMenuButton,
-	ReplayControl
 } from "video-react";
-import { FaRegCopyright } from "react-icons/fa";
 
 //Vids
 import pitch1B from "../Video/pitcher-1b.mp4";

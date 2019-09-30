@@ -1,27 +1,6 @@
 import React, { Component } from "react";
-import navLogo from "./Images/SMT_logo.png";
 import "./App.css";
-import axios from "axios";
-import {
-	Button,
-	Collapse,
-	Input,
-	InputGroup,
-	InputGroupAddon,
-	InputGroupText,
-	Navbar,
-	NavbarToggler,
-	NavbarBrand,
-	Nav,
-	NavItem,
-	NavLink,
-	UncontrolledDropdown,
-	Dropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem
-} from "reactstrap";
-import { MdSettings } from "react-icons/md";
+//import axios from "axios";
 
 import  Header  from './Components/Header';
 import Home from './Components/Home';
@@ -59,7 +38,7 @@ class App extends Component {
 
 	//Mount
 	componentDidMount() {
-		axios.get("/api/testData").then(res => this.setState({ data: res.data }));
+		//axios.get("/api/testData").then(res => this.setState({ data: res.data }));
 	}
 	getDate(minusDays) {
 		var today = new Date();
