@@ -91,9 +91,9 @@ class Header extends Component {
 		if (mm < 10) {
 			mm = "0" + mm;
 		}
-		var today = mm + "/" + dd + "/" + yyyy;
+		var todayT = mm + "/" + dd + "/" + yyyy;
 
-		return today;
+		return todayT;
 	}
 
 	render() {

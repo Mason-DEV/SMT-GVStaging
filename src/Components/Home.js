@@ -232,11 +232,11 @@ class Home extends Component {
 		const inning  = Props.children;
 		var suffix = '';
 		console.info(inning)
-		if(inning == 1)
+		if(inning === 1)
 			suffix = 'st'
-		else if(inning == 2)
+		else if(inning === 2)
 			suffix = 'nd'
-		else if(inning == 2)
+		else if(inning === 2)
 			suffix = 'rd'
 		else suffix = "th"
 		var selected = inning + suffix;
@@ -263,7 +263,7 @@ class Home extends Component {
 	componentDidMount() {}
 
 	render() {
-		const { activeIndex } = this.state.activeIndex;
+		//const { activeIndex } = this.state.activeIndex;
 
 		return (
 			<div>
@@ -661,7 +661,7 @@ class Home extends Component {
 															<List.Content>
 																<List.Header>Pitch Track</List.Header>
 																<List.Description>
-																	<img src={kZoneP}></img>
+																	<img src={kZoneP} alt="kzoneP"></img>
 																</List.Description>
 															</List.Content>
 														</List.Item>
@@ -700,7 +700,7 @@ class Home extends Component {
 															<List.Content> 
 																<List.Header>Hit Trajectory</List.Header>
 																<List.Description>
-																	<img src={hitDiamond}></img>
+																	<img src={hitDiamond} alt="kZoneD"></img>
 																</List.Description>
 															</List.Content>
 														</List.Item>
