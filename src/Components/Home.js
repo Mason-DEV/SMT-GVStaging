@@ -35,9 +35,9 @@ import centerField from "../Video/centerfield.mp4";
 //Images
 import videoSpash from "../Images/Video_Splash.png";
 import kZoneP from "../Images/KZone.gif";
-import kZoneH from "../Images/KZone_Temp_Hitter.png";
+//import kZoneH from "../Images/KZone_Temp_Hitter.png";
 import hitDiamond from "../Images/Hit_Trajectory_Diamond.png";
-import hitSide from "../Images/Hit_Trajectory_Side.png";
+//import hitSide from "../Images/Hit_Trajectory_Side.png";
 
 const playerOptions = [
 	{ key: "p1", value: "p1", text: "Player Name 1" },
@@ -52,17 +52,17 @@ const playerOptions = [
 	{ key: "p10", value: "p10", text: "Player Name 10" }
 ];
 
-const p1Contents = (
-	<div>
-		<p>Type</p>
-		<p>Speed</p>
-	</div>
-);
+// const p1Contents = (
+// 	<div>
+// 		<p>Type</p>
+// 		<p>Speed</p>
+// 	</div>
+// );
 
-const ab1Pitches = [
-	{ key: "panel-1a", title: "Pitch 1", content: { content: p1Contents } },
-	{ key: "panel-ba", title: "Pitch 2", content: { content: p1Contents } }
-];
+// const ab1Pitches = [
+// 	{ key: "panel-1a", title: "Pitch 1", content: { content: p1Contents } },
+// 	{ key: "panel-ba", title: "Pitch 2", content: { content: p1Contents } }
+// ];
 
 // const ab1Contents = (
 	
@@ -74,17 +74,17 @@ const ab1Pitches = [
 // const ab3Contents = (
 	
 // );
-const level2Panels = [
-	{ key: "panel-2a", title: "Level 2A", content: "Level 2A Contents" },
-	{ key: "panel-2b", title: "Level 2B", content: "Level 2B Contents" }
-];
+// const level2Panels = [
+// 	{ key: "panel-2a", title: "Level 2A", content: "Level 2A Contents" },
+// 	{ key: "panel-2b", title: "Level 2B", content: "Level 2B Contents" }
+// ];
 
-const Level2Content = (
-	<div>
-		Welcome to level 2
-		<Accordion.Accordion panels={level2Panels} />
-	</div>
-);
+// const Level2Content = (
+// 	<div>
+// 		Welcome to level 2
+// 		<Accordion.Accordion panels={level2Panels} />
+// 	</div>
+// );
 
 //const allABPanels = 
 

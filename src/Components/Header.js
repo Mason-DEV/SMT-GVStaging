@@ -102,7 +102,7 @@ class Header extends Component {
 			<div style={{backgroundColor: "#62AA58", paddingBottom: "4px"}}>
 				<Navbar color="dark" light expand="lg" style={{height: "55px"}}>
 					<NavbarBrand>
-						<img src={navLogo}></img>
+						<img src={navLogo} alt="navLogo"></img>
 					</NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-5"style={{color: "white",backgroundColor: "#62AA58"}}/>
 					<Collapse isOpen={!this.state.collapsed} navbar  >
