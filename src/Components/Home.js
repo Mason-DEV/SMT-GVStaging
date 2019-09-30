@@ -198,7 +198,7 @@ class Home extends Component {
 
 
 	randomVelo = () => {
-		var whole = Math.floor(Math.random() * (100 - 65 + 1) + 65);
+		var whole = Math.floor(Math.random() * (99 - 65 + 1) + 65);
 		var dec = Math.floor(Math.random() * (100 - 65 + 1) + 65);
 		var velo = whole + "." + dec;
 		return velo;
