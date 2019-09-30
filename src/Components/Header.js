@@ -44,16 +44,16 @@ class Header extends Component {
 			data: {},
             collapsed: true,
             gameOptions: [ 
-                    { key: "g1", value: "g1", text: this.getDate(0) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g2", value: "g2", text:  this.getDate(1) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g3", value: "g3", text:  this.getDate(2) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g4", value: "g4", text:  this.getDate(3) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g5", value: "g5", text:  this.getDate(4) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g6", value: "g6", text:  this.getDate(5) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g7", value: "g7", text:  this.getDate(6) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g8", value: "g8", text:  this.getDate(7) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g9", value: "g9", text:  this.getDate(8) +"- Sports Media Technology @ Sports Media Technology" },
-                    { key: "g10", value: "g10", text:  this.getDate(9) +"- Sports Media Technology @ Sports Media Technology" }
+                    { key: "g1", value: "g1", text: this.getDate(0) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g2", value: "g2", text:  this.getDate(1) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g3", value: "g3", text:  this.getDate(2) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g4", value: "g4", text:  this.getDate(3) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g5", value: "g5", text:  this.getDate(4) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g6", value: "g6", text:  this.getDate(5) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g7", value: "g7", text:  this.getDate(6) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g8", value: "g8", text:  this.getDate(7) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g9", value: "g9", text:  this.getDate(8) +" - SMT Away Team @ SMT Home Team" },
+                    { key: "g10", value: "g10", text:  this.getDate(9) +" - SMT Away Team @ SMT Home Team" }
             ],
 		};
 	}
