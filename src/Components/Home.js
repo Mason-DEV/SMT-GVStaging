@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import "../App.css";
 import axios from "axios";
 import {
+	Divider,
 	Card,
 	Image,
 	Button,
 	Dropdown,
 	Header,
 	List,
+	Icon,
 	Table,
 	Label,
 	Container,
@@ -16,7 +18,8 @@ import {
 	Menu,
 	Tab,
 	Grid,
-	Segment
+	Segment,
+	Statistic
 } from "semantic-ui-react";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
@@ -38,7 +41,7 @@ import centerField from "../Video/centerfield.mp4";
 
 //Images
 import videoSpash from "../Images/Video_Splash.png";
-import kZoneP from "../Images/KZone_Temp.png";
+import kZoneP from "../Images/KZone.gif";
 import kZoneH from "../Images/KZone_Temp_Hitter.png";
 import hitDiamond from "../Images/Hit_Trajectory_Diamond.png";
 import hitSide from "../Images/Hit_Trajectory_Side.png";
@@ -68,202 +71,16 @@ const ab1Pitches = [
 	{ key: "panel-ba", title: "Pitch 2", content: { content: p1Contents } }
 ];
 
-const ab1Contents = (
-	<React.Fragment>
-		<Card centered color="green">
-			<Card.Content>
-				<Image
-					floated="right"
-					size="mini"
-					src="https://icon-library.net/images/generic-profile-icon/generic-profile-icon-2.jpg"
-				/>
-				<Card.Header>Batter 1 Name</Card.Header>
-				<Card.Meta>0-0, .000 AVG, .000 OPS</Card.Meta>
-			</Card.Content>
-		</Card>
-		<List divided selection relaxed>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="red"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Called Strike</List.Header>
-					<List.Description>0-1</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="yellow"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Foul Ball</List.Header>
-					<List.Description>0-2</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="green"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Ball</List.Header>
-					<List.Description>1-2</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="blue"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header >In Play, Out(s)</List.Header>
-					<List.Description >1-2</List.Description>
-				</List.Content>
-			</List.Item>
-		</List>
-	</React.Fragment>
-);
-const ab2Contents = (
-	<React.Fragment>
-		<Card centered color="green">
-			<Card.Content>
-				<Image
-					floated="right"
-					size="mini"
-					src="https://icon-library.net/images/generic-profile-icon/generic-profile-icon-2.jpg"
-				/>
-				<Card.Header>Batter 2 Name</Card.Header>
-				<Card.Meta>0-0, .000 AVG, .000 OPS</Card.Meta>
-			</Card.Content>
-		</Card>
-		<List divided selection relaxed>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="red"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header >Called Strike</List.Header>
-					<List.Description >0-1</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="yellow"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header >Foul Ball</List.Header>
-					<List.Description >0-2</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="green"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header >Ball</List.Header>
-					<List.Description >1-2</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="red"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Swinging Strike</List.Header>
-					<List.Description>1-3</List.Description>
-				</List.Content>
-			</List.Item>
-		</List>
-	</React.Fragment>
-);
+// const ab1Contents = (
+	
+// );
+// const ab2Contents = (
+	
+// );
 
-const ab3Contents = (
-	<React.Fragment>
-		<Card  centered color="green">
-			<Card.Content>
-				<Image
-					floated="right"
-					size="mini"
-					src="https://icon-library.net/images/generic-profile-icon/generic-profile-icon-2.jpg"
-				/>
-				<Card.Header>Batter 3 Name</Card.Header>
-				<Card.Meta>0-0, .000 AVG, .000 OPS</Card.Meta>
-			</Card.Content>
-		</Card>
-		<List divided  selection relaxed>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="red"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Called Strike</List.Header>
-					<List.Description>0-1</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="yellow"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Foul Ball</List.Header>
-					<List.Description>0-2</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="green"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header>Ball</List.Header>
-					<List.Description>1-2</List.Description>
-				</List.Content>
-			</List.Item>
-			<List.Item>
-				<List.Icon
-					name="baseball ball"
-					color="red"
-					size="large"
-					verticalAlign="middle"
-				/>
-				<List.Content as="a">
-					<List.Header >Swinging Strike</List.Header>
-					<List.Description>1-3</List.Description>
-				</List.Content>
-			</List.Item>
-		</List>
-	</React.Fragment>
-);
+// const ab3Contents = (
+	
+// );
 const level2Panels = [
 	{ key: "panel-2a", title: "Level 2A", content: "Level 2A Contents" },
 	{ key: "panel-2b", title: "Level 2B", content: "Level 2B Contents" }
@@ -276,29 +93,10 @@ const Level2Content = (
 	</div>
 );
 
-const allABPanels = [
-	{ key: "panel-1", title: "At Bat 1", content: { content: ab1Contents } },
-	{ key: "panel-2", title: "At Bat 2", content: { content: ab2Contents } },
-	{ key: "panel-3", title: "At Bat 3", content: { content: ab3Contents } }
-];
+//const allABPanels = 
 
-const panes = [
-	{ menuItem: "Pitch", render: () => <Tab.Pane>
-		<Card centered color="blue">
-		<Card.Content>
-		<Card.Header style={{ textAlign: "center" }}>
-			Pitch Number: 1 <br/>
-			Pitch Speed: 98.8 MPH
-			</Card.Header>
-		<img src={kZoneP}></img>
-		</Card.Content>
-		</Card>
-		
-	</Tab.Pane> },
-	{ menuItem: "Hit", render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> }
-	// { menuItem: '', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
-];
-const gameDataPane = [];
+//const panes = ;
+//const gameDataPane = [];
 
 const panes2 = [
 	{
@@ -383,14 +181,50 @@ class Home extends Component {
 		// this.toggleNavbar = this.toggleNavbar.bind(this);
 		this.inningChange = this.inningChange.bind(this);
 		this.halfChange = this.halfChange.bind(this);
+		this.pitchChange = this.pitchChange.bind(this);
 
 		//States
 		this.state = {
 			activeIndex: 0,
 			selectedInning: "1st",
 			halfInning: "Top",
+			pitchNumber: 1,
+			pitchType: this.randomPitch(),
+			pitchVelo: this.randomVelo(),
+
+
 		};
 	}
+
+
+	randomVelo = () => {
+		var whole = Math.floor(Math.random() * (100 - 65 + 1) + 65);
+		var dec = Math.floor(Math.random() * (100 - 65 + 1) + 65);
+		var velo = whole + "." + dec;
+		return velo;
+	}
+
+	
+	randomPitch = () => {
+		const types = [
+			"Changeup",
+			"Curveball",
+			"Cutter",
+			"Eephus",
+			"Forkball",
+			"Four-Seam Fastball",
+			"Knuckleball",
+			"Knuckle-curve",
+			"Screwball",
+			"Sinker",
+			"Slider",
+			"Splitter",
+			"Two-Seam Fastball",
+		  ];
+
+		 var pitch = types[Math.floor(Math.random() * 12)]
+			return pitch;
+	};
 
 	//Functions
 	handleClick = (e, titleProps) => {
@@ -419,8 +253,16 @@ class Home extends Component {
 	//Handles the change of Top/Bottom
 	halfChange(e, Props) {
 		const half = Props.children;
-		console.log(half);
 		this.setState({ halfInning: half});
+	}
+	//Handles the change of pitch
+	pitchChange(e, Props) {
+		const pitchNum = e;
+		//Call pitch type and velo for change numbers 
+		//This is totally fake
+		// this.randomVelo();
+		// this.pitchType();
+		this.setState({ pitchNumber: pitchNum, pitchVelo: this.randomVelo(), pitchType: this.randomPitch()});
 	}
 
 	
@@ -434,7 +276,13 @@ class Home extends Component {
 			<div>
 				<Grid columns="equal">
 					<Grid.Column width={4}>
-						<h3>Game Data</h3>
+						<Header as="h2" style={{color: "white"}}>
+							<Icon name="settings" style={{color: "grey"}}/>
+							<Header.Content>
+								Game Data
+								<Header.Subheader style={{color: "white"}}>Data metrics for selected game.</Header.Subheader>
+							</Header.Content>
+						</Header>
 						<Tab
 							menu={{ color: "green", inverted: true, pointing: true }}
 							panes={[
@@ -516,7 +364,197 @@ class Home extends Component {
 											<Accordion
 												style={{ marignTop: "20px" }}
 												defaultActiveIndex={0}
-												panels={allABPanels}
+												panels={[
+													{ key: "panel-1", title: "At Bat 1", content: { content: <React.Fragment>
+														<Card centered color="green">
+															<Card.Content>
+																<Image
+																	floated="right"
+																	size="mini"
+																	src="https://icon-library.net/images/generic-profile-icon/generic-profile-icon-2.jpg"
+																/>
+																<Card.Header>Batter 1 Name</Card.Header>
+																<Card.Meta>0-0, .000 AVG, .000 OPS</Card.Meta>
+															</Card.Content>
+														</Card>
+														<List divided selection relaxed>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="red"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(1)}>
+																	<List.Header>Called Strike</List.Header>
+																	<List.Description>0-1</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="yellow"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(2)}>
+																	<List.Header>Foul Ball</List.Header>
+																	<List.Description>0-2</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="green"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(3)}>
+																	<List.Header>Ball</List.Header>
+																	<List.Description>1-2</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="blue"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(4)}>
+																	<List.Header >In Play, Out(s)</List.Header>
+																	<List.Description >1-2</List.Description>
+																</List.Content>
+															</List.Item>
+														</List>
+													</React.Fragment> } },
+													{ key: "panel-2", title: "At Bat 2", content: { content: <React.Fragment>
+														<Card centered color="green">
+															<Card.Content>
+																<Image
+																	floated="right"
+																	size="mini"
+																	src="https://icon-library.net/images/generic-profile-icon/generic-profile-icon-2.jpg"
+																/>
+																<Card.Header>Batter 2 Name</Card.Header>
+																<Card.Meta>0-0, .000 AVG, .000 OPS</Card.Meta>
+															</Card.Content>
+														</Card>
+														<List divided selection relaxed>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="red"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(5)}>
+																	<List.Header >Called Strike</List.Header>
+																	<List.Description >0-1</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="yellow"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(6)}>
+																	<List.Header >Foul Ball</List.Header>
+																	<List.Description >0-2</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="green"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(7)}>
+																	<List.Header >Ball</List.Header>
+																	<List.Description >1-2</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="red"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(8)}>
+																	<List.Header>Swinging Strike</List.Header>
+																	<List.Description>1-3</List.Description>
+																</List.Content>
+															</List.Item>
+														</List>
+													</React.Fragment> } },
+													{ key: "panel-3", title: "At Bat 3", content: { content: <React.Fragment>
+														<Card  centered color="green">
+															<Card.Content>
+																<Image
+																	floated="right"
+																	size="mini"
+																	src="https://icon-library.net/images/generic-profile-icon/generic-profile-icon-2.jpg"
+																/>
+																<Card.Header>Batter 3 Name</Card.Header>
+																<Card.Meta>0-0, .000 AVG, .000 OPS</Card.Meta>
+															</Card.Content>
+														</Card>
+														<List divided  selection relaxed>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="red"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(9)}>
+																	<List.Header>Called Strike</List.Header>
+																	<List.Description>0-1</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="yellow"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(10)}>
+																	<List.Header>Foul Ball</List.Header>
+																	<List.Description>0-2</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="green"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(11)}>
+																	<List.Header>Ball</List.Header>
+																	<List.Description>1-2</List.Description>
+																</List.Content>
+															</List.Item>
+															<List.Item>
+																<List.Icon
+																	name="baseball ball"
+																	color="red"
+																	size="large"
+																	verticalAlign="middle"
+																/>
+																<List.Content as="a" onClick={() => this.pitchChange(12)}>
+																	<List.Header >Swinging Strike</List.Header>
+																	<List.Description>1-3</List.Description>
+																</List.Content>
+															</List.Item>
+														</List>
+													</React.Fragment> } }
+												]}
 												styled
 											/>
 										</Tab.Pane>
@@ -534,7 +572,6 @@ class Home extends Component {
 												placeholder="Select Batter"
 												search
 												selection
-												
 												options={playerOptions}
 											/>
 											<Button
@@ -551,7 +588,6 @@ class Home extends Component {
 												placeholder="Select Pitcher"
 												search
 												selection
-										
 												options={playerOptions}
 											/>
 											<Button
@@ -571,8 +607,13 @@ class Home extends Component {
 						/>
 					</Grid.Column>
 					<Grid.Column width={8}>
-						{" "}
-						<h3>Camera Selection</h3>
+					<Header as="h2" style={{color: "white"}}>
+							<Icon name="camera" style={{color: "grey"}}/>
+							<Header.Content>
+								Camera Selection
+								<Header.Subheader style={{color: "white"}}>Camera feeds for selected pitch.</Header.Subheader>
+							</Header.Content>
+						</Header>
 						<Tab
 							menu={{ color: "green", inverted: true, pointing: true }}
 							panes={panes2}
@@ -581,11 +622,102 @@ class Home extends Component {
 						/>
 					</Grid.Column>
 					<Grid.Column>
-						<h3>Pitch Data</h3>
+					<Header as="h2" style={{color: "white"}}>
+							<Icon name="settings" style={{color: "grey"}}/>
+							<Header.Content>
+								Pitch Data
+								<Header.Subheader style={{color: "white"}}>Data metrics for selected pitch.</Header.Subheader>
+							</Header.Content>
+						</Header>
 						{/* <Tab panes={panes} defaultActiveIndex={0} /> */}
 						<Tab
 							menu={{ color: "green", inverted: true, pointing: true }}
-							panes={panes}
+							panes={[
+								{
+									menuItem: "Pitch",
+									render: () => (
+										<Tab.Pane>
+											<Card centered fluid>
+												<Card.Content>
+													<List divided relaxed>
+														<List.Item>
+															<List.Content>
+																<List.Header>Pitch Number</List.Header>
+																<List.Description>{this.state.pitchNumber}</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content>
+																<List.Header>Pitch Type</List.Header>
+																<List.Description>{this.state.pitchType}</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content>
+																<List.Header>Pitch Speed</List.Header>
+																<List.Description>{this.state.pitchVelo} MPH</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content>
+																<List.Header>Pitch Break</List.Header>
+																<List.Description>###</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content>
+																<List.Header>Pitch Track</List.Header>
+																<List.Description>
+																	<img src={kZoneP}></img>
+																</List.Description>
+															</List.Content>
+														</List.Item>
+													</List>
+												</Card.Content>
+											</Card>
+										</Tab.Pane>
+									)
+								},
+								{
+									menuItem: "Hit",
+									render: () => (
+										<Tab.Pane>
+											<Card centered fluid>
+												<Card.Content>
+													<List divided relaxed>
+														<List.Item>
+															<List.Content>
+																<List.Header>Contact Result</List.Header>
+																<List.Description>Hit Into Play - Out(s)</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content>
+																<List.Header>Launch Angle</List.Header>
+																<List.Description>6.85</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content>
+																<List.Header>Exit Velocity</List.Header>
+																<List.Description>86.06</List.Description>
+															</List.Content>
+														</List.Item>
+														<List.Item>
+															<List.Content> 
+																<List.Header>Hit Trajectory</List.Header>
+																<List.Description>
+																	<img src={hitDiamond}></img>
+																</List.Description>
+															</List.Content>
+														</List.Item>
+													</List>
+												</Card.Content>
+											</Card>
+										</Tab.Pane>
+									)
+								}
+							]}
 						/>
 					</Grid.Column>
 				</Grid>
