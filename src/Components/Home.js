@@ -263,7 +263,6 @@ class Home extends Component {
 	componentDidMount() {}
 
 	render() {
-		//const { activeIndex } = this.state.activeIndex;
 
 		return (
 			<div>

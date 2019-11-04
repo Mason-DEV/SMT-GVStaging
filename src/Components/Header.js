@@ -2,30 +2,22 @@ import React, { Component } from "react";
 import navLogo from "../Images/SMT_logo.png";
 import "../App.css";
 import {
-	
-	Button,
 	Collapse,
 	Input,
 	InputGroup,
 	InputGroupAddon,
 	Navbar,
+	NavItem,
+	NavLink,
 	NavbarToggler,
 	NavbarBrand,
 	Nav,
-
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownItem,
-    DropdownMenu
+	UncontrolledDropdown,
+	DropdownToggle,
+	DropdownItem,
+	DropdownMenu
 } from "reactstrap";
-
-import {
-	Dropdown,
-
-} from "semantic-ui-react";
-import { MdSettings } from "react-icons/md";
-
-
+import { Button, Grid } from "semantic-ui-react";
 
 class Header extends Component {
 	constructor() {
@@ -33,25 +25,26 @@ class Header extends Component {
 		//Binds
 		this.toggle = this.toggle.bind(this);
 		this.toggleNavbar = this.toggleNavbar.bind(this);
+		this.switchMode = this.switchMode.bind(this);
 
 		//States
 		this.state = {
 			dropdownOpen: false,
 			message: "",
 			data: {},
-            collapsed: true,
-            gameOptions: [ 
-                    { key: "g1", value: "g1", text: this.getDate(0) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g2", value: "g2", text:  this.getDate(1) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g3", value: "g3", text:  this.getDate(2) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g4", value: "g4", text:  this.getDate(3) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g5", value: "g5", text:  this.getDate(4) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g6", value: "g6", text:  this.getDate(5) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g7", value: "g7", text:  this.getDate(6) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g8", value: "g8", text:  this.getDate(7) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g9", value: "g9", text:  this.getDate(8) +" - SMT Away Team @ SMT Home Team" },
-                    { key: "g10", value: "g10", text:  this.getDate(9) +" - SMT Away Team @ SMT Home Team" }
-            ],
+			collapsed: true,
+			gameOptions: [
+				{ key: "g1", value: "g1", text: this.getDate(0) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g2", value: "g2", text: this.getDate(1) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g3", value: "g3", text: this.getDate(2) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g4", value: "g4", text: this.getDate(3) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g5", value: "g5", text: this.getDate(4) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g6", value: "g6", text: this.getDate(5) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g7", value: "g7", text: this.getDate(6) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g8", value: "g8", text: this.getDate(7) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g9", value: "g9", text: this.getDate(8) + " - SMT Away Team @ SMT Home Team" },
+				{ key: "g10", value: "g10", text: this.getDate(9) + " - SMT Away Team @ SMT Home Team" }
+			]
 		};
 	}
 
@@ -64,19 +57,21 @@ class Header extends Component {
 
 	toggleNavbar() {
 		this.setState(prevState => ({
-		  collapsed: !prevState.collapsed
+			collapsed: !prevState.collapsed
 		}));
-      }
+	}
 
-
-
+	switchMode = (mode) => {
+        this.props.mode(mode);
+        this.setState({
+            mode
+        })
+    };
 
 
 	//Mount
-	componentDidMount() {
+	componentDidMount() {}
 
-    }
-    
 	getDate(minusDays) {
 		var today = new Date();
 		today.setDate(today.getDate() - minusDays);
@@ -97,50 +92,51 @@ class Header extends Component {
 	}
 
 	render() {
-        // console.log("HeaderState",this.state)
 		return (
-			<div style={{backgroundColor: "#62AA58", paddingBottom: "4px"}}>
-				<Navbar color="dark" light expand="lg" style={{height: "55px"}}>
-					<NavbarBrand>
-						<img src={navLogo} alt="navLogo"></img>
-					</NavbarBrand>
-					<NavbarToggler onClick={this.toggleNavbar} className="mr-5"style={{color: "white",backgroundColor: "#62AA58"}}/>
-					<Collapse isOpen={!this.state.collapsed} navbar  >
-						 <Nav navbar className="ml-auto">
-                         <Dropdown
-                                placeholder="Select Player"
-								search
-								selection
-								defaultValue={"g1"}
-								options={this.state.gameOptions}/>
-					</Nav>
-					<Nav navbar className="ml-auto">
-						<InputGroup>
-							<Input placeholder="Search..." />
-							<InputGroupAddon addonType="append">
-								<Button style={{backgroundColor: "#62AA58"}}>Search</Button>
-							</InputGroupAddon>
-						</InputGroup>
-					</Nav>
-					<Nav className="ml-auto" navbar>
-						<UncontrolledDropdown nav inNavbar>
-							<DropdownToggle nav caret style={{ color: "white" }}>
-								<MdSettings /> Settings
-							</DropdownToggle>
-							<DropdownMenu right>
-								<DropdownItem>Thing 1</DropdownItem>
-								<DropdownItem>Thing 2</DropdownItem>
-								<DropdownItem divider />
-								<DropdownItem>Logout</DropdownItem>
-							</DropdownMenu>
-						</UncontrolledDropdown>
-					</Nav> 
-					</Collapse>
-				</Navbar>
-			</div>
+			// <div style={{backgroundColor: "#62AA58", paddingBottom: "4px"}}>
+			<Navbar color="dark" light expand="md">
+				<NavbarBrand>
+					<img src={navLogo} alt="navLogo"></img>
+				</NavbarBrand>
+				<NavbarToggler onClick={this.toggleNavbar} className="mr-5"style={{color: "white",backgroundColor: "#62AA58"}}/>
+				<Collapse isOpen={!this.state.collapsed} navbar  >
+					 <Nav navbar style={{justifyContent: "center", textAlign: "center"}}className="ml-auto">
+						<Button style={this.props.selected === 1 ? {background: "#62AA58"} : {background: ""}} onClick={e=> this.switchMode(1)}> Player Mode</Button>
+				    	<Button style={this.props.selected === 2 ? {background: "#62AA58"} : {background: ""}} onClick={e=> this.switchMode(2)}> Game Mode</Button>
+			         {/* <Dropdown
+			                placeholder="Select Player"
+							search
+							selection
+							defaultValue={"g1"}
+							options={this.state.gameOptions}/> */}
+				</Nav>
+				{/* <Nav navbar className="ml-auto">
+					<InputGroup>
+						<Input placeholder="Search..." />
+						<InputGroupAddon addonType="append">
+							<Button style={{backgroundColor: "#62AA58"}}>Search</Button>
+						</InputGroupAddon>
+					</InputGroup>
+				</Nav> */}
+				<Nav className="ml-auto" navbar>
+					<NavItem style={{color: "white"}}>Logout</NavItem>
+					{/* <UncontrolledDropdown nav inNavbar>
+						<DropdownToggle nav caret style={{ color: "white" }}>
+							{/* <MdSettings /> Settings 
+						</DropdownToggle>
+						<DropdownMenu right>
+							<DropdownItem>Thing 1</DropdownItem>
+							<DropdownItem>Thing 2</DropdownItem>
+							<DropdownItem divider />
+							<DropdownItem>Logout</DropdownItem>
+						</DropdownMenu>
+					</UncontrolledDropdown> */}
+				</Nav>
+				</Collapse>
+			</Navbar>
+			// </div>
 		);
 	}
 }
 
-export default Header
-
+export default Header;

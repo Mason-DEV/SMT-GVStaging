@@ -1,36 +1,61 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+	animation: App-logo-spin infinite 20s linear;
+	height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	background-color: #222;
+	height: 150px;
+	padding: 20px;
+	color: white;
 }
 
 .App-intro {
-  font-size: large;
+	font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .navbar-brand {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
-.navbar-brand>img {
-  padding: 7px 14px;
+.navbar-brand > img {
+	padding: 7px 14px;
 }
 
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	/* background-color: DodgerBlue; */
+}
+
+/* .customCheck .custom-control-input:checked ~ .custom-control-label::after {
+	 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='black' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"); 
+  background-color: #62AA58;
+  color: black;
+} */
+
+.flex-container > div {
+	margin: 10px;
+	color: white;
+	/* text-align: center; */
+	/* line-height: 75px; */
+	/* font-size: 30px; */
+}
+/* 
 html, body{
   min-width: 1380px;
-}
+} */
