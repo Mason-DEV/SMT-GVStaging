@@ -38,7 +38,6 @@
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;
-	width: 100%;
 	/* background-color: DodgerBlue; */
 }
 
@@ -51,6 +50,7 @@
 .flex-container > div {
 	margin: 10px;
 	color: white;
+	flex-grow: 1;
 	/* text-align: center; */
 	/* line-height: 75px; */
 	/* font-size: 30px; */

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header from "./Components/Header";
-import Home from "./Components/Home";
+import Game from "./Components/Game";
 import Player from "./Components/Player";
 import ModeSelector from "./Components/ModeSelector";
 
@@ -29,9 +29,7 @@ class App extends Component {
 				<React.Fragment>
 					<Header mode={this.ModeSelected} selected={this.state.Mode} />
 					<ModeSelector mode={this.ModeSelected} selected={this.state.Mode} />
-					{/* {this.state.Mode === 1 ? <Home /> : <Player />}
-				 */}
-				 <Home/>
+					{this.state.Mode === 2 ? <Game /> : <Player />}
 				</React.Fragment>
 			</div>
 		);

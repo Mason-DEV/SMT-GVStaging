@@ -314,15 +314,16 @@ class ModeSelector extends Component {
 						<h3 style={{ justifyContent: "center", textAlign: "center", color: "white" }}>
 							{" "}
 							<Icon
+								className="settingsIcon"
 								name="sliders horizontal"
-								style={{ cursor: "pointer", color: "white" }}
+								style={{ cursor: "pointer", color: "white"}}
 								onClick={this.toggleSettings}
 							/>{" "}
 							Game Settings{" "}
 						</h3>
 						<Collapse isOpen={!this.state.collapsed}>
 							<div style={{ justifyContent: "center", textAlign: "center" }}>
-								<Dropdown clearable options={options} selection />
+								<Dropdown clearable options={options} defaultValue={"g1"} selection />
 							</div>
 						</Collapse>
 					</Col>
