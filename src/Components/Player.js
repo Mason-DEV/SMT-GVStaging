@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
-import { Card, Image, Button, Dropdown, Header, List, Icon, Accordion, Tab, Grid } from "semantic-ui-react";
+import { Card, Image, Button, Dropdown, Header, List, Icon, Accordion, Tab } from "semantic-ui-react";
 import { Player, ControlBar, PlaybackRateMenuButton } from "video-react";
 //Vids
 import pitch1B from "../Video/pitcher-1b.mp4";
@@ -13,9 +13,7 @@ import centerField from "../Video/centerfield.mp4";
 //Images
 import videoSpash from "../Images/Video_Splash.png";
 import kZoneP from "../Images/KZone.gif";
-//import kZoneH from "../Images/KZone_Temp_Hitter.png";
 import hitDiamond from "../Images/Hit_Trajectory_Diamond.png";
-//import hitSide from "../Images/Hit_Trajectory_Side.png";
 
 const playerOptions = [
 	{ key: "p1", value: "p1", text: "Player Name 1" },
@@ -164,7 +162,6 @@ class Play extends Component {
 	inningChange(e, Props) {
 		const inning = Props.children;
 		var suffix = "";
-		//console.info(inning)
 		if (inning === 1) suffix = "st";
 		else if (inning === 2) suffix = "nd";
 		else if (inning === 2) suffix = "rd";
@@ -181,10 +178,6 @@ class Play extends Component {
 	//Handles the change of pitch
 	pitchChange(e, Props) {
 		const pitchNum = e;
-		//Call pitch type and velo for change numbers
-		//This is totally fake
-		// this.randomVelo();
-		// this.pitchType();
 		this.setState({ pitchNumber: pitchNum, pitchVelo: this.randomVelo(), pitchType: this.randomPitch() });
 	}
 
@@ -290,7 +283,6 @@ class Play extends Component {
 																			)
 																		}
 																	},
-																	,
 																	{
 																		key: "panel-2",
 																		title: "At Bat 2",
@@ -438,7 +430,6 @@ class Play extends Component {
 														)
 													}
 												},
-												,
 												{
 													key: "panel-2",
 													title: "Gamestring 2",
@@ -519,7 +510,6 @@ class Play extends Component {
 																			)
 																		}
 																	},
-																	,
 																	{
 																		key: "panel-2",
 																		title: "At Bat 2",
@@ -667,7 +657,6 @@ class Play extends Component {
 														)
 													}
 												},
-												,
 												{
 													key: "panel-3",
 													title: "Gamestring 3",
@@ -748,7 +737,6 @@ class Play extends Component {
 																			)
 																		}
 																	},
-																	,
 																	{
 																		key: "panel-2",
 																		title: "At Bat 2",
@@ -896,7 +884,6 @@ class Play extends Component {
 														)
 													}
 												},
-												,
 											]}
 										/>
 									</Tab.Pane>
