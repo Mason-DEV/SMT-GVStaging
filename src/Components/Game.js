@@ -174,7 +174,7 @@ class Game extends Component {
     var suffix = "";
     if (inning === 1) suffix = "st";
     else if (inning === 2) suffix = "nd";
-    else if (inning === 2) suffix = "rd";
+    else if (inning === 3) suffix = "rd";
     else suffix = "th";
     var selected = inning + suffix;
     this.setState({ selectedInning: selected, halfInning: "Top" });
